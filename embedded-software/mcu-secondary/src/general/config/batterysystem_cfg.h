@@ -77,7 +77,7 @@
  * \par Default:
  * 2
 */
-#define BS_NR_OF_MODULES                           1
+#define BS_NR_OF_MODULES                           2    //1
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM
@@ -87,7 +87,7 @@
  * \par Default:
  * 12
 */
-#define BS_NR_OF_BAT_CELLS_PER_MODULE               12
+#define BS_NR_OF_BAT_CELLS_PER_MODULE               8   //12
 
 #if BS_NR_OF_BAT_CELLS_PER_MODULE <= 12
     #define BS_MAX_SUPPORTED_CELLS         12
@@ -219,7 +219,7 @@
  * \par Default:
  * 3
 */
-#define BS_NR_OF_CONTACTORS                        6
+#define BS_NR_OF_CONTACTORS                        3    //6
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM
@@ -230,7 +230,7 @@
  * 1
 */
 /* #define BS_SEPARATE_POWERLINES 0 */
-#define BS_SEPARATE_POWERLINES 1
+#define BS_SEPARATE_POWERLINES 0    //1
 
 /*================== Constant and Variable Definitions ====================*/
 
