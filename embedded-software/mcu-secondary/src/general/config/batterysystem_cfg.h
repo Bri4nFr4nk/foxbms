@@ -197,7 +197,7 @@
  * \par Default:
  * 3
 */
-#define BS_NR_OF_VOLTAGES_FROM_CURRENT_SENSOR      3
+#define BS_NR_OF_VOLTAGES_FROM_CURRENT_SENSOR      3    //3
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM
@@ -207,7 +207,7 @@
  * \par Default:
  * 3
 */
-#define BS_NR_OF_VOLTAGES_FROM_MCU_ADC      2
+#define BS_NR_OF_VOLTAGES_FROM_MCU_ADC      8   //2
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM

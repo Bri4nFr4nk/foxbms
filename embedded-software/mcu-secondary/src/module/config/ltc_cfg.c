@@ -215,10 +215,10 @@ const uint8_t ltc_voltage_input_used[BS_MAX_SUPPORTED_CELLS] = {
     1 ,
     1 ,
     1 ,
-    1 ,
-    1 ,
-    1 ,
-    1 ,
+    0 ,
+    0 ,
+    0 ,
+    0 ,
 #endif
 #if BS_MAX_SUPPORTED_CELLS == 15 || BS_MAX_SUPPORTED_CELLS == 18
     1 ,

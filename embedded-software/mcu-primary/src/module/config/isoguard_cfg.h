@@ -71,7 +71,7 @@
 /**
  * Enable/Disable switch for the isoguard module
  */
-#define ISO_ISOGUARD_ENABLE
+//#define ISO_ISOGUARD_ENABLE
 
 /**
  * @ingroup CONFIG_ISOGUARD

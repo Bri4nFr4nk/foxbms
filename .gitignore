@@ -33,3 +33,8 @@ waf*-*-*
 # ignore some git files
 *.patch
 *.diff
+
+
+# Benutzerdefiniertes
+*.h_GescheiterteAenderung
+*logfile_can_foxbms.txt
