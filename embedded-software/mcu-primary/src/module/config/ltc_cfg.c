@@ -55,6 +55,8 @@
 
 #include "epcos_b57861s0103f045.h"
 
+#include "math.h"
+
 /*================== Macros and Definitions ===============================*/
 
 /*================== Constant and Variable Definitions ====================*/
@@ -101,6 +103,16 @@ LTC_MUX_CH_CFG_s ltc_mux_seq_main_ch1[] = {
         .muxID    = 0,
         .muxCh    = 7,
     },
+    
+    {
+        .muxID    = 1,
+        .muxCh    = 0xFF,
+    },
+    {
+        .muxID    = 2,
+        .muxCh    = 0xFF,
+    }, 
+
 /*     ,
       multiplexer 2 and 3 measurement
     {
@@ -244,7 +256,10 @@ float LTC_Convert_MuxVoltages_to_Temperatures(float v_adc) {
     /* temperature = B57861S0103F045_GetTempFromPolynom(v_adc*1000); */
 
     /* Dummy function, must be adapted to the application */
-    temperature = 10 * v_adc;
+    //temperature = 10 * v_adc;
+
+    /* Brian: Implementierung der Polynomfunktion für den NTC Temperatursensor */
+    temperature = (float)(7.9756) * powf(v_adc, 6) - (float)(89.289) * powf(v_adc, 5) + (float)(382.45) * powf(v_adc, 4) - (float)(799.35) * powf(v_adc, 3) + (float)(856.87) * powf(v_adc, 2) - (float)(482.62) * v_adc + (float)(168.64);
 
     return temperature;
 }

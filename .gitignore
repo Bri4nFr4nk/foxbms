@@ -38,3 +38,4 @@ waf*-*-*
 # Benutzerdefiniertes
 *.h_GescheiterteAenderung
 *logfile_can_foxbms.txt
+~$*.xlsx

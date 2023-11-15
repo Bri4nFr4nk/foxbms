@@ -123,7 +123,7 @@
 /**
  * Number of LTC-ICs per battery module
  */
-#define LTC_NUMBER_OF_LTC_PER_MODULE    2   //1 Brian: Anpassung auf 2
+#define LTC_NUMBER_OF_LTC_PER_MODULE    1   //1 Brian: Anpassung auf 2 verursacht vermutlich Daisychain Error
 
 /**
  * Measurement modus for voltages
