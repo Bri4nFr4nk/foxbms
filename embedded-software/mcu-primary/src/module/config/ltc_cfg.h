@@ -361,7 +361,7 @@ extern LTC_MUX_SEQUENZ_s ltc_mux_seq;
 extern const uint8_t ltc_muxsensortemperatur_cfg[BS_NR_OF_TEMP_SENSORS_PER_MODULE];
 
 /**
- * Lookup table to indicate which voltage inpus are used
+ * Lookup table to indicate which voltage inputs are used
  */
 extern const uint8_t ltc_voltage_input_used[BS_MAX_SUPPORTED_CELLS];
 
