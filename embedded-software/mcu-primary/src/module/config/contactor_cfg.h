@@ -88,7 +88,7 @@
  * \par Range:
  * [1.0,2.0]
 */
-#define BAD_SWITCHOFF_CURRENT_POS 100000.0f
+#define BAD_SWITCHOFF_CURRENT_POS 500000.0f      //Brian: Anpassung auf 500 A              //100000.0f
 
 /**
  * @ingroup CONFIG_CONTACTOR
@@ -105,7 +105,7 @@
  * \par Range:
  * [-2.0,-1.0]
 */
-#define BAD_SWITCHOFF_CURRENT_NEG -1000000.0f
+#define BAD_SWITCHOFF_CURRENT_NEG -500000.0f     //Brian: Anpassung auf -500 A            //-1000000.0f
 
 /*
  * The number of defines per contactor must be the same as the length
@@ -116,7 +116,7 @@
  *      #define CONT_MAIN_PLUS_CONTROL      IO_PIN_CONTACTOR_0_CONTROL
  *      #define CONT_MAIN_PLUS_FEEDBACK     IO_PIN_CONTACTOR_0_FEEDBACK
  */
-#define CONT_MAIN_PLUS_CONTROL                  IO_PIN_CONTACTOR_0_CONTROL
+#define CONT_MAIN_PLUS_CONTROL                  IO_PIN_CONTACTOR_0_CONTROL  //Brian: Contactor Port kann hier geändert werden
 #define CONT_MAIN_PLUS_FEEDBACK                 IO_PIN_CONTACTOR_0_FEEDBACK
 
 #define CONT_PRECHARGE_PLUS_CONTROL             IO_PIN_CONTACTOR_1_CONTROL
