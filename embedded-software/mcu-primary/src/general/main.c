@@ -77,6 +77,9 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "gitinfo_cfg.h"
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /*================== Macros and Definitions ===============================*/
 
@@ -89,6 +92,22 @@ RTC_STATUS_s main_state;
 void SystemClock_Config(void);
 void BOOT_Init(void);
 
+int sleep(int zahl)
+{
+    int sinnlos = 0;
+    for (int i = 0; i < zahl; i++)
+    {
+        for (int x = 0; x < 1000000; x++)
+        {
+            for (int y = 0; y < 1000000; y++)
+            {
+                sinnlos = (sinnlos + y) % 3;
+            }
+        }
+    }
+    return sinnlos;
+}
+
 /*================== Function Implementations =============================*/
 /**
   * @brief  Main program
@@ -96,6 +115,7 @@ void BOOT_Init(void);
   * @return int
   *
   */
+
 int main(void) {
     uint32_t retErrorCode = 0;
     STD_RETURN_TYPE_e retval = E_NOT_OK;
@@ -118,7 +138,28 @@ int main(void) {
 
     BOOT_Init();
     IO_Init(&io_cfg[0]);
+
     IO_TogglePin(LED_DEBUG_LED_1);
+
+    int optimierungVermeiden = sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, 1);
+    optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, 0);
+    optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_7_CONTROL, 1);
+    optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_7_CONTROL, 0);
+    optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, 1);
+    optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, 0);
+    
+    if (optimierungVermeiden == 0)
+    {
+        sleep(1);
+    }
+    
+
     DMA_Init(&dma_devices[0]);
     SPI_Init(&spi_devices[0]);
     TIM_Init();
