@@ -96,7 +96,7 @@
     #error "Unsupported number of cells per module, higher than 18"
 #endif
 
-#define BS_BALANCING_RESISTANCE_OHM             100.0
+#define BS_BALANCING_RESISTANCE_OHM             34.0    // Brian: Parallelschaltung von 2x 68 Ohm Widerständen
 /* Number of GPIOs on the LTC IC
  * 5 for 12 cell version
  * 9 for 18 cell version

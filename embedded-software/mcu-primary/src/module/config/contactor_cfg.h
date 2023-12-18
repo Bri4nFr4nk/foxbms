@@ -116,14 +116,14 @@
  *      #define CONT_MAIN_PLUS_CONTROL      IO_PIN_CONTACTOR_0_CONTROL
  *      #define CONT_MAIN_PLUS_FEEDBACK     IO_PIN_CONTACTOR_0_FEEDBACK
  */
-#define CONT_MAIN_PLUS_CONTROL                  IO_PIN_CONTACTOR_3_CONTROL  //Brian: Contactor Port kann hier geändert werden
-#define CONT_MAIN_PLUS_FEEDBACK                 IO_PIN_CONTACTOR_3_FEEDBACK
+#define CONT_MAIN_PLUS_CONTROL                  IO_PIN_CONTACTOR_6_CONTROL  //Brian: Contactor Port kann hier geändert werden
+#define CONT_MAIN_PLUS_FEEDBACK                 IO_PIN_CONTACTOR_6_FEEDBACK
 
-#define CONT_PRECHARGE_PLUS_CONTROL             IO_PIN_CONTACTOR_4_CONTROL
+#define CONT_PRECHARGE_PLUS_CONTROL             IO_PIN_CONTACTOR_7_CONTROL
 #define CONT_PRECHARGE_PLUS_FEEDBACK            CONT_HAS_NO_FEEDBACK        //Brian: Precharge Relais hat kein Feedback
 
-#define CONT_MAIN_MINUS_CONTROL                 IO_PIN_CONTACTOR_5_CONTROL
-#define CONT_MAIN_MINUS_FEEDBACK                IO_PIN_CONTACTOR_5_FEEDBACK
+#define CONT_MAIN_MINUS_CONTROL                 IO_PIN_CONTACTOR_8_CONTROL
+#define CONT_MAIN_MINUS_FEEDBACK                IO_PIN_CONTACTOR_8_FEEDBACK
 
 #if BS_SEPARATE_POWERLINES == 1
 #define CONT_CHARGE_MAIN_PLUS_CONTROL           IO_PIN_CONTACTOR_3_CONTROL
@@ -156,7 +156,7 @@
  * This define also sets the minimum time.
  */
 
-#define CONT_TASK_CYCLE_CONTEXT_MS (10)
+#define CONT_TASK_CYCLE_CONTEXT_MS 10
 
 /**
  * Counter limit used to prevent contactor oscillation
@@ -168,7 +168,7 @@
 /**
  * Number of allowed tries to close contactors
  */
-#define CONT_PRECHARGE_TRIES 3
+#define CONT_PRECHARGE_TRIES 8
 
 /**
  * Delay between open first and second contactor
@@ -193,7 +193,7 @@
 /**
  * CONT statemachine time to wait after contactors opened because precharge failed in ms
  */
-#define CONT_STATEMACH_TIMEAFTERPRECHARGEFAIL_MS        ((100) * (CONT_TASK_CYCLE_CONTEXT_MS))
+#define CONT_STATEMACH_TIMEAFTERPRECHARGEFAIL_MS        ((100) * (CONT_TASK_CYCLE_CONTEXT_MS))	//100
 
 
 /*================== Main precharge configuration ====================*/

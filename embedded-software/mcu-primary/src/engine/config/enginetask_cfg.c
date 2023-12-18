@@ -138,6 +138,13 @@ void ENG_Cyclic_1ms(void) {
     MEAS_Ctrl();
     LTC_Trigger();
     EEPR_Trigger();
+    
+    // #if BUILD_MODULE_ENABLE_CONTACTOR
+    // CONT_Trigger();
+    // #endif
+    // #if BUILD_MODULE_ENABLE_ILCK
+    //      ILCK_Trigger();
+    // #endif
 }
 
 void ENG_Cyclic_10ms(void) {

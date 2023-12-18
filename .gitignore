@@ -40,3 +40,5 @@ waf*-*-*
 *.c_GescheiterteAenderung
 *logfile_can_foxbms.txt
 ~$*.xlsx
+/hardware/hw-master/hw-master
+/hardware/hw-slave-12-ltc6811-1/hw-slave-12-ltc6811-1
