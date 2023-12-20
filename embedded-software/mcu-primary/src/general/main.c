@@ -80,9 +80,10 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-/*#include "stm32f4xx_hal.h"
+
+#include "stm32f4xx_hal.h"
 #include "io_cfg.h"
-*/
+
 
 /*================== Macros and Definitions ===============================*/
 
@@ -97,9 +98,10 @@ void BOOT_Init(void);
 
 
 
-/*void sleep(uint32_t milliseconds) {
+void sleep(uint32_t milliseconds) {
     HAL_Delay(milliseconds);
-int sleep(int zahl)
+}
+/*int sleep(int zahl)
 {
     int sinnlos = 0;
     for (int i = 0; i < zahl; i++)
@@ -207,7 +209,7 @@ int main(void) {
     os_boot = OS_INIT_OSSTARTKERNEL;    /* start scheduler */
     vTaskStartScheduler();              /* vTaskStartScheduler() should never return */
 
-   /* //int optimierungVermeiden = sleep(10000);
+   //int optimierungVermeiden = sleep(10000);
     IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, 1);
     sleep(1000);
     //optimierungVermeiden += sleep(10000);
@@ -224,7 +226,7 @@ int main(void) {
     sleep(1000);
     //optimierungVermeiden += sleep(10000);
     IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, 0);
-    */
+    
     
     // if (optimierungVermeiden == 0)
     // {
