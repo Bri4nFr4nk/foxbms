@@ -250,14 +250,13 @@ const uint8_t ltc_voltage_input_used[BS_MAX_SUPPORTED_CELLS] = {
 float LTC_Convert_MuxVoltages_to_Temperatures(float v_adc) {
     float temperature = 0.0;
 
-    /* Example: 5th grade polynomial for EPCOS B57861S0103F045 NTC-Thermistor, 10 kOhm, Series B57861S, Vref = 3V, R in series 10k */
-    /* temperature = B57861S0103F045_GetTempFromPolynom(v_adc*1000); */
-
-    /* Dummy function, must be adapted to the application */
-    //temperature = 10 * v_adc;
-
     /* Brian: Implementierung der Polynomfunktion für den NTC Temperatursensor */
-    temperature = (float)(7.9756) * powf(v_adc, 6) - (float)(89.289) * powf(v_adc, 5) + (float)(382.45) * powf(v_adc, 4) - (float)(799.35) * powf(v_adc, 3) + (float)(856.87) * powf(v_adc, 2) - (float)(482.62) * v_adc + (float)(168.64);
-
+    temperature = (float)(7.9756) * powf(v_adc, 6) 
+                - (float)(89.289) * powf(v_adc, 5) 
+                + (float)(382.45) * powf(v_adc, 4) 
+                - (float)(799.35) * powf(v_adc, 3) 
+                + (float)(856.87) * powf(v_adc, 2) 
+                - (float)(482.62) * v_adc 
+                + (float)(168.64);
     return temperature;
 }

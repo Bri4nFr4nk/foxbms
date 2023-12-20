@@ -74,7 +74,7 @@
  * \par Default:
  * 2
 */
-#define BS_NR_OF_MODULES                           2    //1
+#define BS_NR_OF_MODULES                           2    //Anzahl an Slave-Modulen
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM
@@ -84,7 +84,7 @@
  * \par Default:
  * 12
 */
-#define BS_NR_OF_BAT_CELLS_PER_MODULE               8  //12
+#define BS_NR_OF_BAT_CELLS_PER_MODULE               8  //Anzahl an Zellen pro Modul
 
 #if BS_NR_OF_BAT_CELLS_PER_MODULE <= 12
     #define BS_MAX_SUPPORTED_CELLS         12
@@ -181,7 +181,7 @@
  * \par Default:
  * 6
 */
-#define BS_NR_OF_TEMP_SENSORS_PER_MODULE            8
+#define BS_NR_OF_TEMP_SENSORS_PER_MODULE            8   //Anzahl an Temperatursensoren pro Modul
 
 
 #define BS_NR_OF_BAT_CELLS                         (BS_NR_OF_MODULES * BS_NR_OF_BAT_CELLS_PER_MODULE)
@@ -266,7 +266,7 @@
  * If set to FALSE, foxBMS checks when balancing must be done and activates it accordingly.
  *
 */
-#define BALANCING_DEFAULT_INACTIVE           FALSE  //TRUE
+#define BALANCING_DEFAULT_INACTIVE           FALSE  // Aktivierung des Balancing
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM
@@ -289,7 +289,7 @@
  * \par Default:
  * 1
 */
-#define BMS_TEST_CELL_SOF_LIMITS                FALSE    //TRUE
+#define BMS_TEST_CELL_SOF_LIMITS                FALSE    // Statische Limits, änderbar auf dynamische Limits
 
 
 /**
@@ -309,7 +309,7 @@
  * \par Default:
  * 3
 */
-#define BS_NR_OF_VOLTAGES_FROM_CURRENT_SENSOR      3    //3 Brian: Ausprobieren!
+#define BS_NR_OF_VOLTAGES_FROM_CURRENT_SENSOR      3 
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM
@@ -319,7 +319,7 @@
  * \par Default:
  * 3
 */
-#define BS_NR_OF_VOLTAGES_FROM_MCU_ADC      8   //2
+#define BS_NR_OF_VOLTAGES_FROM_MCU_ADC      8   // Anzahl an Spannungen pro Modul, die gemessen werden
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM
@@ -331,7 +331,7 @@
  * \par Default:
  * 3
 */
-#define BS_NR_OF_CONTACTORS                        3    //6
+#define BS_NR_OF_CONTACTORS                        3    // Anzahl an Schützen
 
 /**
  * @ingroup CONFIG_BATTERYSYSTEM
@@ -342,7 +342,7 @@
  * 1
 */
 /* #define BS_SEPARATE_POWERLINES 0 */
-#define BS_SEPARATE_POWERLINES 0    //1
+#define BS_SEPARATE_POWERLINES 0    // Keine Trennung der Leitungen, d.h. nur eine Leitung für Laden und Entladen
 
 #if BS_NR_OF_CONTACTORS > 3 && BS_SEPARATE_POWERLINES == 0
 #error "Configuration mismatch: Can't use only one powerline with more than 3 contactors"

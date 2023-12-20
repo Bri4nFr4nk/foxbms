@@ -126,7 +126,7 @@
  * \par Default:
  * 0
 */
-#define BUILD_MODULE_ENABLE_CONTACTOR           1
+#define BUILD_MODULE_ENABLE_CONTACTOR           1 // Kontaktor-Aktivierung
 
 /**
  * @ingroup CONFIG_GENERAL
@@ -136,7 +136,7 @@
  * \par Default:
  * 0
 */
-#define BUILD_MODULE_ENABLE_ILCK          1
+#define BUILD_MODULE_ENABLE_ILCK          1 // Interlock-Aktivierung
 
 /**
  * @ingroup CONFIG_GENERAL
@@ -146,7 +146,7 @@
  * \par Default:
  * 0
 */
-#define BUILD_MODULE_ENABLE_ISOGUARD          0
+#define BUILD_MODULE_ENABLE_ISOGUARD          0 // Hier kann Isolationswächter aktiviert werden
 
 
 /**

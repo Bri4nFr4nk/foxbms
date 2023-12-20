@@ -201,7 +201,7 @@
 
 #define BMS_GETSELFCHECK_STATE()            BMS_CHECK_OK            /* function could return: BMS_CHECK_NOT_OK or OK BMS_CHECK_BUSY */
 #define BMS_GETPOWERONSELFCHECK_STATE()     BMS_CHECK_OK            /* function could return: BMS_CHECK_NOT_OK or OK BMS_CHECK_BUSY */
-#define BMS_CHECKPRECHARGE()                BMS_CheckPrecharge()    /* DIAG_CheckPrecharge() */
+#define BMS_CHECKPRECHARGE()                BMS_CheckPrecharge()    /* DIAG_CheckPrecharge() */ //Brian: Anpassung sinnvoll? 
 
 /*
  * Mapping the marcos from the contactor-module to
