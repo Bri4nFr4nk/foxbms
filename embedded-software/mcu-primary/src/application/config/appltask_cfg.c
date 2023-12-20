@@ -63,6 +63,8 @@
 #include "database.h"
 #include "meas.h"
 #include "algo.h"
+#include "stm32f4xx_hal.h"
+#include "io_cfg.h"
 
 /*================== Macros and Definitions ===============================*/
 
@@ -70,6 +72,7 @@
 OS_Task_Definition_s appl_tskdef_cyclic_1ms   = { 0,      1,  OS_PRIORITY_NORMAL,       APPL_TSK_C_1MS_STACKSIZE};
 OS_Task_Definition_s appl_tskdef_cyclic_10ms  = { 4,     10,  OS_PRIORITY_BELOW_NORMAL, APPL_TSK_C_10MS_STACKSIZE};
 OS_Task_Definition_s appl_tskdef_cyclic_100ms = { 58,   100,  OS_PRIORITY_LOW,          APPL_TSK_C_100MS_STACKSIZE};
+OS_Task_Definition_s appl_tskdef_cyclic_2000ms = {100, 2000, OS_PRIORITY_LOW, APPL_TSK_C_2000MS_STACKSIZE};
 OS_Task_Definition_s appl_tskdef_aperiodic =    { 0,     10,  OS_PRIORITY_IDLE,         APPL_TSK_APERIODIC_STACKSIZE};
 
 static uint8_t io_initialized = FALSE;
@@ -79,6 +82,7 @@ static uint8_t io_cycle = 0;
 static uint8_t first_cycle = 0;
 static DATA_BLOCK_SLAVE_CONTROL_s example_slave_control;
 
+static uint8_t CONT_counter = 0;
 /*================== Function Prototypes ==================================*/
 
 /*================== Function Implementations =============================*/
@@ -204,4 +208,39 @@ void APPL_Cyclic_100ms(void) {
 void APPL_Aperiodic(void) {
     COM_Decoder();
     COM_printHelpCommand();
+}
+
+void APPL_Cyclic_2000ms(void) {
+    //DIAG_SysMonNotify(DIAG_SYSMON_APPL_CYCLIC_2000ms, 0);        /* task is running, state = ok */
+
+    /* User specific implementations:   */
+    /*   ...                            */
+    /*   ...                            */
+
+    switch(CONT_counter){
+        case 0:
+            IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, IO_PIN_SET);
+            CONT_counter++;
+            break;
+        case 1:
+            IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, IO_PIN_RESET);
+            CONT_counter++;
+            break;
+        case 2:
+            IO_WritePin(IO_PIN_CONTACTOR_7_CONTROL, IO_PIN_SET);
+            CONT_counter++;
+            break;
+        case 3:
+            IO_WritePin(IO_PIN_CONTACTOR_7_CONTROL, IO_PIN_RESET);
+            CONT_counter++;
+            break;
+        case 4:
+            IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, IO_PIN_SET);
+            CONT_counter++;
+            break;
+        case 5:
+            IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, IO_PIN_RESET);
+            CONT_counter=0;
+            break;
+    }
 }

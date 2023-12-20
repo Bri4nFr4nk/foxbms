@@ -80,6 +80,9 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+/*#include "stm32f4xx_hal.h"
+#include "io_cfg.h"
+*/
 
 /*================== Macros and Definitions ===============================*/
 
@@ -92,6 +95,10 @@ RTC_STATUS_s main_state;
 void SystemClock_Config(void);
 void BOOT_Init(void);
 
+
+
+/*void sleep(uint32_t milliseconds) {
+    HAL_Delay(milliseconds);
 int sleep(int zahl)
 {
     int sinnlos = 0;
@@ -106,7 +113,7 @@ int sleep(int zahl)
         }
     }
     return sinnlos;
-}
+}}*/
 
 /*================== Function Implementations =============================*/
 /**
@@ -140,24 +147,6 @@ int main(void) {
     IO_Init(&io_cfg[0]);
 
     IO_TogglePin(LED_DEBUG_LED_1);
-
-    int optimierungVermeiden = sleep(10000);
-    IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, 1);
-    optimierungVermeiden += sleep(10000);
-    IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, 0);
-    optimierungVermeiden += sleep(10000);
-    IO_WritePin(IO_PIN_CONTACTOR_7_CONTROL, 1);
-    optimierungVermeiden += sleep(10000);
-    IO_WritePin(IO_PIN_CONTACTOR_7_CONTROL, 0);
-    optimierungVermeiden += sleep(10000);
-    IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, 1);
-    optimierungVermeiden += sleep(10000);
-    IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, 0);
-    
-    if (optimierungVermeiden == 0)
-    {
-        sleep(1);
-    }
     
 
     DMA_Init(&dma_devices[0]);
@@ -217,6 +206,30 @@ int main(void) {
 
     os_boot = OS_INIT_OSSTARTKERNEL;    /* start scheduler */
     vTaskStartScheduler();              /* vTaskStartScheduler() should never return */
+
+   /* //int optimierungVermeiden = sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, 1);
+    sleep(1000);
+    //optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_6_CONTROL, 0);
+    sleep(1000);
+    //optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_7_CONTROL, 1);
+    sleep(1000);
+    //optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_7_CONTROL, 0);
+    sleep(1000);
+    //optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, 1);
+    sleep(1000);
+    //optimierungVermeiden += sleep(10000);
+    IO_WritePin(IO_PIN_CONTACTOR_8_CONTROL, 0);
+    */
+    
+    // if (optimierungVermeiden == 0)
+    // {
+    //     sleep(1);
+    // }
 
     while (1) {
         /* TODO: explain why infinite loop */

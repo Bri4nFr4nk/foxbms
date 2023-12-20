@@ -78,6 +78,11 @@
 #define APPL_TSK_C_100MS_STACKSIZE     (1024u/4u)
 
 /**
+ * @brief Stack size of 2000ms task; Test Brian
+ */
+#define APPL_TSK_C_2000MS_STACKSIZE     (1024u/4u)
+
+/**
  * @brief Stack size of aperiodic task
  */
 #define APPL_TSK_APERIODIC_STACKSIZE   (1024u/4u)
@@ -120,6 +125,11 @@ extern OS_Task_Definition_s appl_tskdef_cyclic_100ms;
  */
 extern OS_Task_Definition_s appl_tskdef_aperiodic;
 
+/**
+* Task configuration of the 2000ms application task; Test Brian
+*/
+extern OS_Task_Definition_s appl_tskdef_cyclic_2000ms;
+
 /*================== Function Prototypes ==================================*/
 
 /**
@@ -142,6 +152,13 @@ extern void APPL_Cyclic_10ms(void);
  * @ingroup API_OS
  */
 extern void APPL_Cyclic_100ms(void);
+
+/**
+ * @brief   user application task 2000 milliseconds
+ *
+ * @ingroup API_OS
+ */
+extern void APPL_Cyclic_2000ms(void);
 
 /**
  * @brief   user application task aperiodic
