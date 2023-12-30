@@ -216,9 +216,9 @@
  * or maximum operating limit (MOL) is violated, the respective flag will be
  * set.
  */
-#define BS_CURRENTMAX_CHARGE_PL0_MSL_mA        (180000u)
-#define BS_CURRENTMAX_CHARGE_PL0_RSL_mA        (170000u)
-#define BS_CURRENTMAX_CHARGE_PL0_MOL_mA        (160000u)
+#define BS_CURRENTMAX_CHARGE_PL0_MSL_mA        (26000u)
+#define BS_CURRENTMAX_CHARGE_PL0_RSL_mA        (10000u)
+#define BS_CURRENTMAX_CHARGE_PL0_MOL_mA        (9000u)  // Brian: oder bei Bedarf 3000mA einstellen
 
 /**
  * @brief Maximum operation limit of current on the powerline 0 in
@@ -227,10 +227,12 @@
  * or maximum operating limit (MOL) is violated, the respective flag will be
  * set.
  */
-#define BS_CURRENTMAX_DISCHARGE_PL0_MSL_mA     (BS_CURRENTMAX_CHARGE_PL0_MSL_mA)
-#define BS_CURRENTMAX_DISCHARGE_PL0_RSL_mA     (BS_CURRENTMAX_CHARGE_PL0_RSL_mA)
-#define BS_CURRENTMAX_DISCHARGE_PL0_MOL_mA     (BS_CURRENTMAX_CHARGE_PL0_MOL_mA)
-
+// #define BS_CURRENTMAX_DISCHARGE_PL0_MSL_mA     (BS_CURRENTMAX_CHARGE_PL0_MSL_mA)
+// #define BS_CURRENTMAX_DISCHARGE_PL0_RSL_mA     (BS_CURRENTMAX_CHARGE_PL0_RSL_mA)
+// #define BS_CURRENTMAX_DISCHARGE_PL0_MOL_mA     (BS_CURRENTMAX_CHARGE_PL0_MOL_mA)
+#define BS_CURRENTMAX_DISCHARGE_PL0_MSL_mA     (120000u)
+#define BS_CURRENTMAX_DISCHARGE_PL0_RSL_mA     (52000u)
+#define BS_CURRENTMAX_DISCHARGE_PL0_MOL_mA     (50000u)
 /**
  * @brief Maximum operation limit of current of powerline 1 in
  * charge direction in mA. When maximum safety limit (MSL) is violated, error state
