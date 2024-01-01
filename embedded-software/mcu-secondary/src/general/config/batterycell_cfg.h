@@ -122,7 +122,7 @@
  * \par Default:
  * 0
 */
-#define BC_TEMPMIN_CHARGE_MSL     -20   //-20
+#define BC_TEMPMIN_CHARGE_MSL     0   //-20
 
 /**
  * @ingroup CONFIG_BATTERYCELL
@@ -149,7 +149,7 @@
  * \par Default:
  * 2500
 */
-#define BC_VOLT_NOMINAL     3200    //2500
+#define BC_VOLT_NOMINAL     3300    //2500
 /**
  * @ingroup CONFIG_BATTERYCELL
  * Minimum cell voltage limit.
@@ -193,7 +193,7 @@
  * \par Default:
  * 180000
 */
-#define BC_CURRENTMAX_CHARGE_MSL        10000  //180000
+#define BC_CURRENTMAX_CHARGE_MSL        10000  //26000
 
 /*
  * the cell capacity used for SOC calculation, in this case Ah counting
